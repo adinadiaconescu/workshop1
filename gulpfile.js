@@ -37,7 +37,7 @@ gulp.task('inject', function () {
         .pipe(gulp.dest('./src/views'));
 });
 
-gulp.task('serve', ['style', 'inject'], function () {
+gulp.task('serve', ['style', 'inject'], function(){
     var options = {
         script: 'app.js',
         delayTime: 1,
@@ -48,6 +48,6 @@ gulp.task('serve', ['style', 'inject'], function () {
     };
     return nodemon(options)
         .on('restart', function (ev) {
-            console.log('Restarting');
+            console.log('Restarting.....');
         });
 });
