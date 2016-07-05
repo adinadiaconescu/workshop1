@@ -5,13 +5,18 @@ var express = require('express');
 
 var bookRouter = express.Router();
 var router = function (nav) {
-    var books = [{
-        title: 'Cartea cartilor',
-        author: 'the people'
-    }, {
-        title: 'Cartea 7',
-        author: 'R2D2'
-    },
+    var books = [
+        {
+            title: 'Cartea cartilor',
+            author: 'the people'
+        }, {
+            title: 'Cartea 7',
+            author: 'R2D2'
+        },
+        {
+            title: 'Cartea xx',
+            author: 'the other people'
+        },
         {
             title: 'Cartea xx',
             author: 'the other people'
@@ -22,7 +27,7 @@ var router = function (nav) {
             res.render('bookListView', {
                 title: 'Books !',
                 nav: nav,
-                books : books
+                books: books
             });
 
         });
@@ -33,12 +38,10 @@ var router = function (nav) {
             res.render('bookView', {
                 title: 'Books !',
                 nav: nav,
-                book : books[id]
+                book: books[id]
             });
         });
     return bookRouter;
 };
-
-
 
 module.exports = router;

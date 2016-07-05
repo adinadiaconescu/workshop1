@@ -11,7 +11,8 @@ gulp.task('style', function () {
         .pipe(jshint.reporter('jshint-stylish', {
             verbose: true
         }))
-        .pipe(jscs());
+        .pipe(jscs())
+        .pipe(jscs.reporter());
 });
 
 gulp.task('inject', function () {
@@ -37,7 +38,7 @@ gulp.task('inject', function () {
         .pipe(gulp.dest('./src/views'));
 });
 
-gulp.task('serve', ['style', 'inject'], function(){
+gulp.task('serve', ['style', 'inject'], function() {
     var options = {
         script: 'app.js',
         delayTime: 1,
