@@ -2,30 +2,18 @@
  * Created by adch on 05.07.2016.
  */
 var express = require('express');
-
 var mongodb = require ('mongodb').MongoClient;
-
 var bookRouter = express.Router();
-
 var objectId =  require ('mongodb').ObjectID;
+
 var router = function (nav) {
 
-    /* var books = [
-        {
-            title: 'Cartea cartilor',
-            author: 'the people'
-        }, {
-            title: 'Cartea 7',
-            author: 'R2D2'
-        },
-        {
-            title: 'Cartea xx',
-            author: 'the other people'
-        },
-        {
-            title: 'Cartea xx',
-            author: 'the other people'
-        }];*/
+    bookRouter.use(function(req, res, next) {
+        if (!req.user) {
+            res.redirect('/');
+        }
+        next();
+    });
 
     bookRouter.route('/')
         .get(function (req, res) {
