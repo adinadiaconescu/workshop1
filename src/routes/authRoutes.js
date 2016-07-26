@@ -23,14 +23,9 @@ var router = function() {
                     req.login(result.ops[0], function() {
                         res.redirect('/auth/profile');
                     });
-
                     db.close();
-
                 });
-
             });
-
-
         });
     authRouter.route('/profile')
         .all(function(req, res, next) {
@@ -47,7 +42,7 @@ var router = function() {
         .post(passport.authenticate('local', {
             failureRedirect: '/'
         }), function(req, res) {
-            res.redirect('/auth/profile')
+            res.redirect('/auth/profile');
         });
 
     return authRouter;

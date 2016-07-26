@@ -27,8 +27,6 @@ app.use(bodyParser.urlencoded({
 
 app.use(cookieParser());
 app.use(session({secret: 'library'}));
-
-
 require('./src/config/passport')(app);
 
 app.set('views', './src/views');

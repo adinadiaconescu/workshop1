@@ -5,18 +5,30 @@ var mongodb = require ('mongodb').MongoClient;
 var books = [
     {
         title: 'Cartea cartilor',
-        author: 'the people'
+        genre: 'sf',
+        author: 'the people',
+        bookId: 656,
+        read: false
     }, {
         title: 'Cartea 7',
-        author: 'R2D2'
+        author: 'R2D2',
+        genre: 'sf',
+        bookId: 656,
+        read: false
     },
     {
         title: 'Cartea xx',
-        author: 'the other people'
+        author: 'the other people',
+        genre: 'sf',
+        bookId: 2433,
+        read: false
     },
     {
         title: 'Cartea xx',
-        author: 'the other people'
+        author: 'the other people',
+        genre: 'sf',
+        bookId: 656,
+        read: false
     }];
 var router = function (nav) {
     adminRouter.route('/addBooks')
